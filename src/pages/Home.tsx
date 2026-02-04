@@ -51,6 +51,9 @@ function Home() {
           <Link to="/advanced-elements">
             <button id="nav-advanced" data-testid="nav-advanced-btn" className="success">Advanced Elements</button>
           </Link>
+          <Link to="/repo-metrics">
+            <button id="nav-repo-metrics" data-testid="nav-repo-metrics-btn" className="info">📊 Repo Metrics</button>
+          </Link>
         </div>
       </section>
 

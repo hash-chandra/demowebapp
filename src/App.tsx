@@ -19,6 +19,7 @@ import InteractiveComponents from './pages/InteractiveComponents'
 import AdvancedData from './pages/AdvancedData'
 import RichContent from './pages/RichContent'
 import ErrorStates from './pages/ErrorStates'
+import RepoMetrics from './pages/RepoMetrics'
 
 function AppContent() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
@@ -50,7 +51,8 @@ function AppContent() {
     { name: 'Interactive', path: '/interactive', keywords: ['interactive', 'tab', 'accordion', 'carousel', 'toast', 'tooltip'] },
     { name: 'Advanced Data', path: '/advanced-data', keywords: ['data', 'infinite', 'scroll', 'filter', 'chart', 'visualization'] },
     { name: 'Rich Content', path: '/rich-content', keywords: ['rich', 'editor', 'wysiwyg', 'upload', 'file', 'context menu'] },
-    { name: 'Error States', path: '/error-states', keywords: ['error', '404', '500', '403', 'empty', 'offline'] }
+    { name: 'Error States', path: '/error-states', keywords: ['error', '404', '500', '403', 'empty', 'offline'] },
+    { name: 'Repo Metrics', path: '/repo-metrics', keywords: ['repo', 'repository', 'metrics', 'github', 'stats', 'usage'] }
   ]
 
   const handleSearch = (query: string) => {
@@ -232,6 +234,7 @@ function AppContent() {
             <li><NavLink to="/advanced-data">📊 Advanced Data</NavLink></li>
             <li><NavLink to="/rich-content">✨ Rich Content</NavLink></li>
             <li><NavLink to="/error-states">🚨 Error States</NavLink></li>
+            <li><NavLink to="/repo-metrics">📈 Repo Metrics</NavLink></li>
           </ul>
         </aside>
         <main className="main-content">
@@ -255,6 +258,7 @@ function AppContent() {
               <Route path="/advanced-data" element={<AdvancedData />} />
               <Route path="/rich-content" element={<RichContent />} />
               <Route path="/error-states" element={<ErrorStates />} />
+              <Route path="/repo-metrics" element={<RepoMetrics />} />
             </Routes>
           </div>
         </main>
