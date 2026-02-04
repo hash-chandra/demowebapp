@@ -208,12 +208,12 @@ function AdvancedElements() {
         <meter
           id="meter"
           data-testid="meter"
-          min="0"
-          max="100"
-          low="30"
-          high="70"
-          optimum="20"
-          value="80"
+          min={0}
+          max={100}
+          low={30}
+          high={70}
+          optimum={20}
+          value={80}
           style={{ width: '100%', height: '30px' }}
         />
         <p>80 GB used out of 100 GB</p>
