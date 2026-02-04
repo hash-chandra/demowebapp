@@ -143,7 +143,7 @@ Practice error handling and edge case scenarios:
 
 ## 🚀 Live Demo
 
-[**Try it now!**](https://hash-chandra.github.io/DemoWebApp/)
+[**Try it now!**](https://hash-chandra.github.io/demowebapp/)
 
 ## 👨‍💻 Author
 

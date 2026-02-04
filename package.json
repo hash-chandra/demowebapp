@@ -5,7 +5,7 @@
   "type": "module",
   "author": "hash-chandra (https://github.com/hash-chandra)",
   "description": "A comprehensive web application for practicing test automation with Playwright, Selenium, and Cypress",
-  "homepage": "https://hash-chandra.github.io/DemoWebApp",
+  "homepage": "https://hash-chandra.github.io/demowebapp",
   "repository": {
     "type": "git",
     "url": "https://github.com/hash-chandra/DemoWebApp.git"
