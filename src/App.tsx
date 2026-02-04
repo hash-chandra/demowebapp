@@ -191,6 +191,14 @@ function AppContent() {
         </div>
       </nav>
 
+      {!isSidebarCollapsed && (
+        <div 
+          className="sidebar-overlay" 
+          data-testid="sidebar-overlay"
+          onClick={toggleSidebar}
+        />
+      )}
+
       <div className="content-wrapper">
         <aside className={`sidebar ${isSidebarCollapsed ? 'collapsed' : ''}`} id="sidebar" data-testid="sidebar">
           <h3>Quick Navigation</h3>
