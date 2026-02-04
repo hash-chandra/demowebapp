@@ -23,7 +23,7 @@ A comprehensive web application designed specifically for learning and practicin
 
 ## 🌟 Features
 
-This application provides a wide variety of UI elements and scenarios to practice automation:
+This application provides **18 comprehensive pages** with over **60+ UI elements and scenarios** to practice automation across real-world use cases including e-commerce, banking, data visualization, and error handling.
 
 ### 📝 Form Elements
 - Text inputs (text, email, password, number, tel, url, search)
@@ -58,6 +58,89 @@ This application provides a wide variety of UI elements and scenarios to practic
 - Form state persistence
 - Review and confirmation step
 
+### 🛒 E-commerce Features
+
+Practice end-to-end e-commerce testing workflows:
+
+- **Product Grid**: Responsive product cards with images and details
+- **Shopping Cart**: Add/remove items, quantity selectors, cart total calculation
+- **Star Ratings**: Interactive 5-star rating system with hover states
+- **Wishlist**: Add/remove products from favorites
+- **Search Autocomplete**: Dynamic search suggestions as you type
+- **Breadcrumb Navigation**: Hierarchical navigation tracking
+- **Quick View Modal**: Product preview without page navigation
+- **Empty States**: Empty cart messaging and CTAs
+
+**Test IDs**: `product-grid`, `cart-items`, `cart-total`, `wishlist-{id}`, `search-suggestions`, `breadcrumb`
+
+### 🏦 Banking & Finance
+
+Test financial application scenarios with specialized inputs:
+
+- **Date Range Picker**: Select date ranges for statements with validation
+- **Currency Input**: Formatted currency input with automatic formatting
+- **OTP Input**: 6-digit one-time password with auto-focus navigation
+- **Copy to Clipboard**: Account number copying with success feedback
+- **File Download**: Statement download simulation with progress
+- **Calculator**: EMI/loan calculator with basic mathematical operations
+- **Session Timeout**: Inactivity warning and session management (10s demo)
+
+**Test IDs**: `start-date`, `end-date`, `currency-input`, `otp-{0-5}`, `copy-account`, `download-statement`, `calc-display`
+
+### 🎯 Interactive Components
+
+Test complex UI interactions and dynamic behaviors:
+
+- **Toast Notifications**: Success, error, warning, info messages with auto-dismiss
+- **Tabs**: Multi-tab navigation with 4 content sections
+- **Accordion**: Collapsible content panels (multiple can be open)
+- **Image Carousel**: Auto-play slider with manual navigation controls and indicators
+- **Tooltips**: Multi-position hover tooltips (top, right, bottom, left)
+- **Animations**: Smooth CSS transitions and loading effects
+
+**Test IDs**: `toast-container`, `toast-{type}`, `tabs-container`, `tab-{id}`, `accordion-{id}`, `carousel-slide`, `tooltip-{position}`
+
+### 📊 Advanced Data & Visualizations
+
+Practice data-heavy application testing:
+
+- **Infinite Scroll**: Auto-load 100 items on scroll with Intersection Observer
+- **Skeleton Loaders**: Loading placeholders during data fetch
+- **Advanced Filters**: Multi-criteria filtering (category, status, value, sort)
+- **Progress Bars**: Color-coded progress indicators (red/yellow/green)
+- **Charts**: Bar charts for data visualization
+- **Virtual Scrolling**: Efficient rendering for large datasets
+
+**Test IDs**: `infinite-scroll-container`, `data-item-{id}`, `skeleton-loader`, `filter-panel`, `chart-container`, `progress-bar`
+
+### ✨ Rich Content Features
+
+Test content editing and file management workflows:
+
+- **Rich Text Editor**: WYSIWYG editor with formatting toolbar (Bold, Italic, Underline, Headings, Lists)
+- **File Upload with Preview**: Image preview before upload with file validation
+- **Upload Progress**: Real-time upload progress simulation (0-100%)
+- **Context Menu**: Custom right-click menus with 6 actions
+- **Keyboard Shortcuts**: Cmd/Ctrl+S (Save), B (Bold), I (Italic), U (Underline)
+- **Content Editable**: Direct text editing in browser with HTML output
+
+**Test IDs**: `rich-text-editor`, `editor-toolbar`, `format-{bold|italic|underline}`, `file-input`, `upload-progress`, `context-menu-area`
+
+### 🚨 Error & Empty States
+
+Practice error handling and edge case scenarios:
+
+- **404 Page Not Found**: Navigation recovery with back/home buttons
+- **500 Server Error**: Internal error handling with retry functionality
+- **403 Forbidden**: Access denied scenarios with request access CTA
+- **Offline Detection**: Automatic network status monitoring with banner
+- **Maintenance Mode**: System maintenance modal overlay
+- **Empty States**: 5 scenarios (inbox, search, cart, notifications, data)
+- **Network Errors**: Connection failure handling with test connection
+- **Load Failures**: Content loading error with retry/report options
+
+**Test IDs**: `error-404`, `error-500`, `error-403`, `offline-banner`, `maintenance-overlay`, `empty-{type}`, `network-error`
+
 ## 🚀 Live Demo
 
 [**Try it now!**](https://hash-chandra.github.io/DemoWebApp/)
@@ -77,7 +160,7 @@ Contributions, issues, and feature requests are welcome!
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/DemoWebApp.git
+git clone https://github.com/hash-chandra/DemoWebApp.git
 
 # Navigate to project directory
 cd DemoWebApp
@@ -207,45 +290,92 @@ describe('Login Test', () => {
 
 ## 📚 Test Scenarios to Practice
 
-1. **Basic Form Interactions**
-   - Fill out login form
-   - Submit registration form
+### 1. **Basic Form Interactions**
+   - Fill out login form with test credentials
+   - Submit registration form with validation
    - Handle form validation errors
+   - Test remember me functionality
 
-2. **Table Operations**
+### 2. **E-commerce Workflows**
+   - Browse product grid and filter by category
+   - Add items to cart and update quantities
+   - Use product search with autocomplete
+   - Add/remove items from wishlist
+   - Complete checkout process
+
+### 3. **Banking Operations**
+   - Select date ranges for statements
+   - Enter and format currency values
+   - Complete OTP verification flow
+   - Copy account numbers to clipboard
+   - Download statements with progress tracking
+   - Use calculator for EMI calculations
+
+### 4. **Table Operations**
    - Sort table columns
    - Filter table data
    - Select rows
    - Navigate pagination
 
-3. **Alert Handling**
+### 5. **Alert & Dialog Handling**
    - Accept/dismiss JavaScript alerts
    - Handle confirms and prompts
    - Interact with custom modals
+   - Test toast notifications
 
-4. **Drag and Drop**
+### 6. **Drag and Drop**
    - Drag items between containers
    - Verify dropped elements
+   - Test drag handles
 
-5. **iFrame Switching**
+### 7. **iFrame Switching**
    - Switch to iframe
    - Interact with iframe content
    - Handle nested iframes
 
-6. **Shadow DOM**
+### 8. **Shadow DOM**
    - Access elements inside shadow root
    - Click shadow DOM buttons
    - Fill shadow DOM forms
 
-7. **Dynamic Content**
+### 9. **Dynamic Content**
    - Wait for dynamic content to load
+   - Handle infinite scroll
+   - Test skeleton loaders
    - Verify AJAX responses
-   - Handle loading states
 
-8. **Multi-Step Forms**
+### 10. **Interactive Components**
+   - Navigate between tabs
+   - Expand/collapse accordions
+   - Control image carousel
+   - Trigger toast notifications
+   - Test tooltip positioning
+
+### 11. **Rich Content Editing**
+   - Format text with toolbar buttons
+   - Upload files with preview
+   - Monitor upload progress
+   - Use keyboard shortcuts
+   - Test context menus
+
+### 12. **Error Handling**
+   - Navigate error pages (404, 500, 403)
+   - Test offline detection
+   - Handle network errors
+   - Verify empty states
+   - Test maintenance mode
+
+### 13. **Multi-Step Forms**
    - Navigate through form steps
    - Validate each step
    - Submit complete form
+   - Test form state persistence
+
+### 14. **Data Visualization**
+   - Test advanced filters
+   - Sort and filter large datasets
+   - Verify chart data
+   - Test progress indicators
 
 ## 🛠️ Technology Stack
 
@@ -335,32 +465,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you find this project helpful, please ⭐ star the repository!
 
-For questions or issues, please [open an issue](https://github.com/yourusername/DemoWebApp/issues).
+For questions or issues, please [open an issue](https://github.com/hash-chandra/DemoWebApp/issues).
 
 ---
 
 **Happy Testing! 🎉**
-
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

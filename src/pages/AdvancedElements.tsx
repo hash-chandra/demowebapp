@@ -298,6 +298,11 @@ wait.until(ExpectedConditions.invisibilityOfElementLocated(
 ));`}
         </pre>
       </div>
+      <footer style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ecf0f1', textAlign: 'center', color: '#7f8c8d' }}>
+        <p>
+          Created by <a href="https://github.com/hash-chandra" target="_blank" rel="noopener noreferrer" style={{ color: '#3498db', textDecoration: 'none', fontWeight: 'bold' }}>@hash-chandra</a>
+        </p>
+      </footer>
     </div>
   )
 }
