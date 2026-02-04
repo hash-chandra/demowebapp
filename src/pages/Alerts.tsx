@@ -81,8 +81,28 @@ function Alerts() {
 
       {/* Simple Modal */}
       {showModal && (
-        <div className="modal-overlay" id="modal-overlay" data-testid="modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="modal" id="simple-modal" data-testid="simple-modal" onClick={(e) => e.stopPropagation()}>
+        <div 
+          className="modal-overlay" 
+          id="modal-overlay" 
+          data-testid="modal-overlay" 
+          onClick={() => setShowModal(false)}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+              setShowModal(false)
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Close modal"
+        >
+          <div 
+            className="modal" 
+            id="simple-modal" 
+            data-testid="simple-modal" 
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+          >
             <h2>Simple Modal</h2>
             <p>This is a custom modal dialog. Click outside or press the button to close.</p>
             <div className="modal-actions">
@@ -105,7 +125,14 @@ function Alerts() {
           id="confirm-modal-overlay"
           data-testid="confirm-modal-overlay"
         >
-          <div className="modal" id="confirm-modal" data-testid="confirm-modal" onClick={(e) => e.stopPropagation()}>
+          <div 
+            className="modal" 
+            id="confirm-modal" 
+            data-testid="confirm-modal" 
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+          >
             <h2>Confirm Action</h2>
             <p>Are you sure you want to proceed with this action?</p>
             <div className="modal-actions">

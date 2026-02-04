@@ -14,7 +14,7 @@ function Login({ onLoginSuccess }: LoginProps) {
   const [showSuccessDialog, setShowSuccessDialog] = useState(false)
   const navigate = useNavigate()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const newErrors: { username?: string; password?: string } = {}
 

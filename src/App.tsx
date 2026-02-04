@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -21,8 +21,12 @@ import RichContent from './pages/RichContent'
 import ErrorStates from './pages/ErrorStates'
 
 function AppContent() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [username, setUsername] = useState('')
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem('isAuthenticated') === 'true'
+  })
+  const [username, setUsername] = useState(() => {
+    return localStorage.getItem('username') || ''
+  })
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [showSearchResults, setShowSearchResults] = useState(false)
@@ -68,15 +72,6 @@ function AppContent() {
     setSearchQuery('')
     setShowSearchResults(false)
   }
-
-  useEffect(() => {
-    const authStatus = localStorage.getItem('isAuthenticated')
-    const storedUsername = localStorage.getItem('username')
-    if (authStatus === 'true' && storedUsername) {
-      setIsLoggedIn(true)
-      setUsername(storedUsername)
-    }
-  }, [])
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated')
@@ -140,8 +135,16 @@ function AppContent() {
                       <div
                         key={page.path}
                         className="search-result-item"
-                        data-testid={`search-result-${page.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        data-testid={`search-result-${page.name.toLowerCase().replaceAll(/\s+/, '-')}`}
                         onClick={() => navigateToPage(page.path)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault()
+                            navigateToPage(page.path)
+                          }
+                        }}
+                        role="button"
+                        tabIndex={0}
                       >
                         <span className="result-name">{page.name}</span>
                         <span className="result-path">{page.path}</span>
@@ -196,6 +199,14 @@ function AppContent() {
           className="sidebar-overlay" 
           data-testid="sidebar-overlay"
           onClick={toggleSidebar}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+              toggleSidebar()
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Close sidebar"
         />
       )}
 
