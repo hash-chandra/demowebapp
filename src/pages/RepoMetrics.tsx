@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 interface Repository {
   id: number
@@ -34,6 +34,8 @@ function RepoMetrics() {
     
     try {
       // Fetch all repositories for the user
+      // Note: GitHub API has a rate limit of 60 requests/hour for unauthenticated requests
+      // For more than 100 repos, pagination would be needed
       const response = await fetch('https://api.github.com/users/hash-chandra/repos?per_page=100&sort=updated')
       
       if (!response.ok) {
@@ -49,7 +51,7 @@ function RepoMetrics() {
     }
   }
 
-  const getUniqueLanguages = (): string[] => {
+  const getUniqueLanguages = useMemo((): string[] => {
     const languages = new Set<string>()
     repos.forEach(repo => {
       if (repo.language) {
@@ -57,9 +59,9 @@ function RepoMetrics() {
       }
     })
     return Array.from(languages).sort()
-  }
+  }, [repos])
 
-  const getSortedAndFilteredRepos = (): Repository[] => {
+  const getSortedAndFilteredRepos = useMemo((): Repository[] => {
     let filtered = repos
 
     // Filter by language
@@ -82,9 +84,9 @@ function RepoMetrics() {
     })
 
     return sorted
-  }
+  }, [repos, sortBy, filterLanguage])
 
-  const calculateTotalMetrics = () => {
+  const calculateTotalMetrics = useMemo(() => {
     const total = {
       repos: repos.length,
       stars: repos.reduce((sum, repo) => sum + repo.stargazers_count, 0),
@@ -94,7 +96,7 @@ function RepoMetrics() {
       size: repos.reduce((sum, repo) => sum + repo.size, 0)
     }
     return total
-  }
+  }, [repos])
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -137,9 +139,9 @@ function RepoMetrics() {
     )
   }
 
-  const totalMetrics = calculateTotalMetrics()
-  const sortedRepos = getSortedAndFilteredRepos()
-  const languages = getUniqueLanguages()
+  const totalMetrics = calculateTotalMetrics
+  const sortedRepos = getSortedAndFilteredRepos
+  const languages = getUniqueLanguages
 
   return (
     <div className="page">

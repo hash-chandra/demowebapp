@@ -234,7 +234,7 @@ function AppContent() {
             <li><NavLink to="/advanced-data">📊 Advanced Data</NavLink></li>
             <li><NavLink to="/rich-content">✨ Rich Content</NavLink></li>
             <li><NavLink to="/error-states">🚨 Error States</NavLink></li>
-            <li><NavLink to="/repo-metrics">📈 Repo Metrics</NavLink></li>
+            <li><NavLink to="/repo-metrics">📊 Repo Metrics</NavLink></li>
           </ul>
         </aside>
         <main className="main-content">
