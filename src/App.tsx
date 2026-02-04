@@ -246,7 +246,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router basename="/DemoWebApp">
+    <Router basename="/demowebapp">
       <AppContent />
     </Router>
   )
