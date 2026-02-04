@@ -135,7 +135,7 @@ function AppContent() {
                       <div
                         key={page.path}
                         className="search-result-item"
-                        data-testid={`search-result-${page.name.toLowerCase().replaceAll(/\s+/, '-')}`}
+                        data-testid={`search-result-${page.name.toLowerCase().replace(/\s+/g, '-')}`}
                         onClick={() => navigateToPage(page.path)}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter' || e.key === ' ') {
