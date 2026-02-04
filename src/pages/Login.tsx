@@ -239,6 +239,10 @@ input[placeholder='Enter your username']
 button[type='submit']`}
         </pre>
       </div>
+
+      <p style={{ textAlign: 'center', marginTop: '2rem', color: '#7f8c8d', fontSize: '0.9rem' }}>
+        Demo by <a href="https://github.com/hash-chandra" target="_blank" rel="noopener noreferrer" style={{ color: '#3498db' }}>@hash-chandra</a>
+      </p>
     </div>
   )
 }

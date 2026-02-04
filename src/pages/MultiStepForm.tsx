@@ -469,6 +469,12 @@ function MultiStepForm() {
           </button>
         </div>
       </form>
+
+      <div style={{ marginTop: '2rem', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '4px', textAlign: 'center' }}>
+        <p style={{ margin: 0, fontSize: '0.9rem', color: '#7f8c8d' }}>
+          💡 Practice automation with this form • Built by <a href="https://github.com/hash-chandra" target="_blank" rel="noopener noreferrer" style={{ color: '#3498db', textDecoration: 'none' }}>@hash-chandra</a>
+        </p>
+      </div>
     </div>
   )
 }

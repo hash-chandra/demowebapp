@@ -284,6 +284,12 @@ function Tables() {
           <li>Each cell has a unique data-testid for easy automation</li>
         </ul>
       </div>
+
+      <div style={{ marginTop: '1.5rem', textAlign: 'center', padding: '1rem', backgroundColor: '#ecf0f1', borderRadius: '4px' }}>
+        <p style={{ margin: 0, fontSize: '0.85rem', color: '#7f8c8d' }}>
+          ⭐ Found this useful? Check out more at <a href="https://github.com/hash-chandra" target="_blank" rel="noopener noreferrer" style={{ color: '#3498db' }}>github.com/hash-chandra</a>
+        </p>
+      </div>
     </div>
   )
 }

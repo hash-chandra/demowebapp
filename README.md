@@ -60,7 +60,13 @@ This application provides a wide variety of UI elements and scenarios to practic
 
 ## 🚀 Live Demo
 
-[**Try it now!**](https://yourusername.github.io/DemoWebApp/) *(Update with your GitHub Pages URL)*
+[**Try it now!**](https://hash-chandra.github.io/DemoWebApp/)
+
+## 👨‍💻 Author
+
+Created and maintained by **[@hash-chandra](https://github.com/hash-chandra)**
+
+Contributions, issues, and feature requests are welcome!
 
 ## 💻 Running Locally
 

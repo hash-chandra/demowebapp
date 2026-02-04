@@ -3,6 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "hash-chandra (https://github.com/hash-chandra)",
+  "description": "A comprehensive web application for practicing test automation with Playwright, Selenium, and Cypress",
+  "homepage": "https://hash-chandra.github.io/DemoWebApp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hash-chandra/DemoWebApp.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
