@@ -463,7 +463,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-If you find this project helpful, please ⭐ star the repository!
+If you find this project helpful, please ⭐ star the repository! 
 
 For questions or issues, please [open an issue](https://github.com/hash-chandra/DemoWebApp/issues).
 
